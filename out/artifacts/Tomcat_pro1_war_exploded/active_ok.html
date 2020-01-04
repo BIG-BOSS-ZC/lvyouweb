@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>注册</title>
+    <link rel="stylesheet" type="text/css" href="css/common.css">
+    <link rel="stylesheet" href="css/register.css">
+    <!--导入jquery-->
+    <script src="js/jquery-3.3.1.js"></script>
+</head>
+<body>
+<!--引入头部-->
+<div id="header"></div>
+<!-- 头部 end -->
+<div style="text-align:center;red:yellow;font-weight:bold;height:150px;padding-top:100px;font-size:30px;">
+    <h4>恭喜，激活成功！<span id="txtTime" style="color: red">5</span>秒后跳转至登录页面。</h4>
+</div>
+<!--引入尾部-->
+<div id="footer"></div>
+<!--导入布局js，共享header和footer-->
+<script type="text/javascript" src="js/include.js"></script>
+<script>
+        var i=5;
+        var timer=setInterval(djs,1000);
+        function djs(){
+            i--;
+            $("#txtTime").html(i);
+            if(i<=0){
+                location.href="login.html";
+                clearInterval(timer);
+            }
+        }
+</script>
+</body>
+</html>
